@@ -1,0 +1,43 @@
+@startuml pizza_personalizacion
+skinparam classAttributeIconSize 0
+
+interface Pizza {
+    +getDescription(): String
+    +getCost(): double
+}
+
+class BasicPizza {
+    +getDescription(): String
+    +getCost(): double
+}
+
+abstract class PizzaDecorator {
+    -pizza: Pizza
+    +PizzaDecorator(pizza: Pizza)
+    +getDescription(): String
+    +getCost(): double
+}
+
+class CheeseDecorator {
+    +getDescription(): String
+    +getCost(): double
+}
+
+class HamDecorator {
+    +getDescription(): String
+    +getCost(): double
+}
+
+class MushroomDecorator {
+    +getDescription(): String
+    +getCost(): double
+}
+
+Pizza <|.. BasicPizza
+Pizza <|.. PizzaDecorator
+PizzaDecorator <|.. CheeseDecorator
+PizzaDecorator <|.. HamDecorator
+PizzaDecorator <|.. MushroomDecorator
+Pizza o-- PizzaDecorator : decorates
+
+@enduml

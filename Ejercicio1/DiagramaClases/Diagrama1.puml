@@ -1,0 +1,38 @@
+@startuml TrafficLight_State
+skinparam classAttributeIconSize 0
+
+interface TrafficLightState {
+    +display()
+    +changeState(trafficLight: TrafficLight)
+}
+
+class TrafficLight {
+    -currentState: TrafficLightState
+    +TrafficLight()
+    +setState(state: TrafficLightState)
+    +changeState()
+    +display()
+}
+
+class RedState {
+    +display()
+    +changeState(trafficLight: TrafficLight)
+}
+
+class YellowState {
+    +display()
+    +changeState(trafficLight: TrafficLight)
+}
+
+class GreenState {
+    +display()
+    +changeState(trafficLight: TrafficLight)
+}
+
+TrafficLightState <|.. RedState
+TrafficLightState <|.. YellowState
+TrafficLightState <|.. GreenState
+TrafficLight "1" *-- "1" TrafficLightState : currentState
+
+@enduml
+

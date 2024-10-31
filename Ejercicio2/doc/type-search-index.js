@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"modelo","l":"ExpressShipping"},{"p":"modelo","l":"InternationalShipping"},{"p":"modelo","l":"RegularShipping"},{"p":"modelo","l":"ShippingContext"},{"p":"modelo","l":"ShippingStrategy"}];updateSearchResults();

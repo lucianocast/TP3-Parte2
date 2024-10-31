@@ -1,0 +1,32 @@
+@startuml envio_estrategias
+skinparam classAttributeIconSize 0
+
+interface ShippingStrategy {
+    +calculateShippingCost(distance: double): double
+}
+
+class RegularShipping {
+    +calculateShippingCost(distance: double): double
+}
+
+class ExpressShipping {
+    +calculateShippingCost(distance: double): double
+}
+
+class InternationalShipping {
+    +calculateShippingCost(distance: double): double
+}
+
+class ShippingContext {
+    -strategy: ShippingStrategy
+    +ShippingContext(strategy: ShippingStrategy)
+    +setStrategy(strategy: ShippingStrategy)
+    +calculateCost(distance: double): double
+}
+
+ShippingStrategy <|.. RegularShipping
+ShippingStrategy <|.. ExpressShipping
+ShippingStrategy <|.. InternationalShipping
+ShippingStrategy <|.. ShippingContext
+
+@enduml
