@@ -4,6 +4,9 @@ import modelo.*;
  * Clase cliente que prueba diferentes estrategias de envío.
  */
 public class ShopClient {
+    /**
+     * Método principal que crea pedidos con direrentes estrategias de envio
+     */
     public static void main(String[] args) {
         double distance = 50;
         ShippingContext context = new ShippingContext(new RegularShipping());
